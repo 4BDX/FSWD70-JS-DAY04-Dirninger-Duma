@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style> 
+body{ 
+	background-color: #E9F0FA;
+	}
+	button {
+	  background-color: #003580;
+	  border: none;
+	  color: #FFFFFF;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+}
+
+</style>
+
 
 </head>
 <body>
@@ -9,7 +26,11 @@
 
 	<p id="text"> </p>
 	<p id="text2"> </p>
+	<p id="text3"> </p>
+	<br>
 
+	<button onclick=";">Click me!</button>
+	<button onclick="check()">Click me!</button>
 
 <script>
 
@@ -51,9 +72,87 @@ var PInfo = {
 }
 document.getElementById("text2").innerHTML = PInfo.test();
 
+
+
+
+
+
+
+
+//intermediate 1		
+function check(){
+	var inputNights = prompt("How many nights do you want to stay?");
+	function AllHotels(name)
+{
+	
+	this.name = name;
+	this.ANights = Math.floor((Math.random() *10) + 1);
+	this.inputNights = parseInt(inputNights);
+	this.checkavailability = function()
+	{
+		
+		if (this.ANights - inputNights >= 0) { document.getElementById("text3").innerHTML += "I'll reserve";}
+		
+		else 
+		{ document.getElementById("text3").innerHTML += "Sorry, no available room in " + this.name;}
+
+
+	} 
+
+
+
+	}
+
+	var HotelMax = new AllHotels("HotelMax");
+var HotelDavid = new AllHotels("HotelDavid");
+var HotelBoris = new AllHotels("HotelBoris");
+
+HotelMax.checkavailability();
+HotelDavid.checkavailability();
+HotelBoris.checkavailability();
+
+}
+
+
+
+
+var Hotels = [
+	"HotelMax",
+	"HotelDavid",
+	"HotelBoris"
+];
+
+/*var hotel = {
+	name: "Serri's Hotel",
+	Gym: true,
+	rooms:200,
+	booked: 200,
+	check: function(){
+		return this.rooms - this.booked
+	}
+}
+
+console.log(hotel.check())
+
+function sum(a,b){
+	return a+b;
+
+}
+
+sum(1,2);
+*/
+
+
+
+
+
 </script>
 
 
 </body>
 </html>
 
+
+	
+	
+	
