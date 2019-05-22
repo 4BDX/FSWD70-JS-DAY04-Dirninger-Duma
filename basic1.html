@@ -8,6 +8,7 @@
 
 
 	<p id="text"> </p>
+	<p id="text2"> </p>
 
 
 <script>
@@ -31,16 +32,24 @@ age();
 
 	var text = "We are Maximilian and David and we try to code something";
 	var text1 = text.substring(0,27);
-	document.getElementById("text").innerHTML = text1
+	document.getElementById("text").innerHTML = text1;
 
 //Basic4:
 
 
 
+var PInfo = {
+	name: "David",
+	surname: "Duma",
+	age: 23,
+	description: "codefactory",
+	test: function(){
+		return "I am " + this.name + " " + this.surname + "and I am " + this.age + " years old. I started at " + this.description;
+	}
 
 
-
-
+}
+document.getElementById("text2").innerHTML = PInfo.test();
 
 </script>
 
