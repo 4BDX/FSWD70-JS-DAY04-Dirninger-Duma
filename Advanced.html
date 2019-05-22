@@ -4,8 +4,17 @@
 	<meta charset="utf-8">
 	<title>Calculator</title>
 	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		.mycalc {
+			margin-left: 2rem;
+		}
+
 		button{
 			font-size: 4em;
+
 		}
 
 
@@ -19,17 +28,30 @@
 			height: 3.8em;
 		}
 
-		#calculator{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-top: 200px;
-		}
 
 		#window{
 			height: 80px;
 		}
+		.display {
+			background-color: green;
+			width: 78.2%;
+			height: 140px;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			text-align: right;
+			margin-right: 30px;
+		}
 
+		#inputwindow{
+			background-color: red;
+			color: #ff0;
+			opacity: 0.5;
+			font-size: 200px;
+			height: 250px;
+			border: 2px solid blue;
+		
+		}
 
 
 
@@ -38,9 +60,11 @@
 </head>
 <body>
 	<div class="mycalc">
-	<input type="text" name="inputwindow" id="inputwindow">
 	
 	
+		<div class="display">
+			<input type="text" name="inputwindow" id="inputwindow">
+		</div>
 		<div id="first">
 			<button id="M+" value="M+" onclick="takevalue(document.getElementById('M+').value)">M+</button>
 			<button id="+/-" value="+/-" onclick="takevalue(document.getElementById('+/-').value)">+/-</button>
@@ -52,7 +76,7 @@
 		<div id="second">
 			<button id="M" value="M" onclick="takevalue(document.getElementById('M').value)">M-</button>
 			<button id="(" value="(" onclick="takevalue(document.getElementById('(').value)">(</button>
-			<button id="8" value="8" onclick="takevalue(document.getElementById('8').value)">8</button>
+			<button id="eight" value="8" onclick="takevalue(document.getElementById('8').value)">8</button>
 			<button id="5" value="5" onclick="takevalue(document.getElementById('5').value)">5</button>
 			<button id="2" value="2" onclick="takevalue(document.getElementById('2').value)">2</button>
 			<button id="0" value="0" onclick="takevalue(document.getElementById('0').value)">0</button>
