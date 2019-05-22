@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<style>
+		button{
+			font-size: 4em;
+		}
+
+
+		#first, #second, #third, #fourth, #fifth {
+			display:  flex;
+			flex-flow: column;
+			float:  left;
+		}
+
+		#= {
+			height: 3.8em;
+		}
+
+		#calculator{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 200px;
+		}
+
+		#window{
+			height: 80px;
+		}
+
+
+
+
+		
+	</style>
+</head>
+<body>
+	<div class="mycalc">
+	<input type="text" name="inputwindow" id="inputwindow">
+	
+	
+		<div id="first">
+			<button id="M+" value="M+" onclick="takevalue(document.getElementById('M+').value)">M+</button>
+			<button id="+/-" value="+/-" onclick="takevalue(document.getElementById('+/-').value)">+/-</button>
+			<button id="7" value="7" onclick="takevalue(document.getElementById('7').value)">7</button>
+			<button id="4" value="4" onclick="takevalue(document.getElementById('4').value)">4</button>
+			<button id="1" value="1" onclick="takevalue(document.getElementById('1').value)">1</button>
+			<button id="E" value="E" onclick="takevalue(document.getElementById('E').value)">E</button>
+		</div>
+		<div id="second">
+			<button id="M" value="M" onclick="takevalue(document.getElementById('M').value)">M-</button>
+			<button id="(" value="(" onclick="takevalue(document.getElementById('(').value)">(</button>
+			<button id="8" value="8" onclick="takevalue(document.getElementById('8').value)">8</button>
+			<button id="5" value="5" onclick="takevalue(document.getElementById('5').value)">5</button>
+			<button id="2" value="2" onclick="takevalue(document.getElementById('2').value)">2</button>
+			<button id="0" value="0" onclick="takevalue(document.getElementById('0').value)">0</button>
+		</div>
+		<div id="third">
+			<button id="MR" value="MR" onclick="takevalue(document.getElementById('MR').value)">MR</button>
+			<button id=")" value=")" onclick="takevalue(document.getElementById(')').value)">)</button>
+			<button id="9" value="9" onclick="takevalue(document.getElementById('9').value)">9</button>
+			<button id="6" value="6" onclick="takevalue(document.getElementById('6').value)">6</button>
+			<button id="3" value="3" onclick="takevalue(document.getElementById('3').value)">3</button>
+			<button id="." value="." onclick="takevalue(document.getElementById('.').value)">.</button>
+		</div>
+		<div id="fourth">
+			<button id="MS" value="MS" onclick="takevalue(document.getElementById('MS').value)">MS</button>
+			<button id="%" value="%" onclick="takevalue(document.getElementById('%').value)">%</button>
+			<button id="÷" value="÷" onclick="takevalue(document.getElementById('÷').value)">÷</button>
+			<button id="x" value="x" onclick="takevalue(document.getElementById('x').value)">x</button>
+			<button id="-" value="-" onclick="takevalue(document.getElementById('-').value)">-</button>
+			<button id="+" value="+" onclick="takevalue(document.getElementById('+').value)">+</button>
+		</div>
+		<div id="fifth">
+			<button id="MC" value="MC" onclick="takevalue(document.getElementById('MC').value)">MC</button>
+			<button id="C" value="C" onclick="clearInput(document.getElementById('C').value)">C</button>
+			<button id="<-" value="<-" onclick="clearInput(document.getElementById('<-').value)"><-</button>
+			<button id="=" value="=" onclick="calculateResult()">=</button>
+		</div>
+
+	</div>
+	
+
+
+
+	<script>
+		function takeValue(x){
+			document.getElementsById("inputwindow").value += x;
+		}
+
+		function clearInput(y){
+			document.getElementById("inputwindow").value = y;
+		}
+
+		function calculateResult(){
+			var result = eval(document.getElementById("inputwindow").value);
+			document.getElementById("inputwindow").innerHTML = result;
+			console.log(result);
+		}
+		
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
