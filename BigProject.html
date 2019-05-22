@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Big Project</title>
+	<script type="text/javascript" src="js/BigProject.js"></script>
+	<style>
+		#result{
+            width: 100%;
+            height: 200px;
+            background-color: #ffff99;
+            
+		}
+		#player1, #player2{
+			width: 45%;
+			height: 200px;
+			border: 2px solid gray;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="result">
+		<h1>Player One's turn!</h1>
+	</div>
+	
+	<div id="player1">
+		<p id="totalP1"></p>
+		<p id="recentP1"></p>
+	</div>
+	<div id="player2">
+		<p id="totalP2"></p>
+		<p id="recentP2"></p>
+	</div>
+	<button onclick="throwDice()">Play!</button>
+
+	<script>
+		var playerOneTotal = 0;
+		var playerTwoTotal = 0;
+		var playerOneThrow = 0;
+		var playerTwoThrow = 0;
+		var currentPlayer = 1;
+
+		function throwDice(){
+
+			var diceThrow = Math.floor(Math.random()*19);
+
+			if (currentPlayer == 1) {
+				playerOneTotal = playerOneTotal + diceThrow;
+				document.getElementById("totalP1").innerHTML = playerOneTotal;
+				playerOneThrow = diceThrow;
+				document.getElementById("recentP1").innerHTML = playerOneThrow;
+				document.getElementById("result").innerHTML = "<h1> Player One's turn!</h1>";
+
+			} else {
+				playerTwoTotal = playerTwoTotal + diceThrow;
+				document.getElementById("totalP2").innerHTML = playerTwoTotal;
+				playerTwoThrow = diceThrow;
+				document.getElementById("recentP2").innerHTML = playerTwoThrow;
+				document.getElementById("result").innerHTML = "<h1> Player Two turn!</h1>";
+
+			}
+			checkWinner();
+			currentPlayer = currentPlayer * - 1;
+		}
+		function checkWinner(){
+
+			if (playerOneTotal >= 100){
+				document.getElementById("result").innerHTML ="<h1> Player One's WINS!!</h1>"
+			}
+			if (playerTwoTotal >= 100){
+				document.getElementById("result").innerHTML ="<h1> Player Two WINS!!</h1>"
+			}
+
+		}
+
+</script>
+
+</body>
+</html>
